@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/blog">Блог</a></li>
+                <li><a href="/contacts">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Добро пожаловать!</h1>
+        <p>Текущее время: <span id="current-time"></span></p>
+    </main>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleString();
+            document.getElementById('current-time').textContent = timeString;
+        }
+        setInterval(updateTime, 1000); // Обновляем каждую секунду
+        updateTime(); // Инициализируем сразу
+    </script>
+</body>
+</html>
