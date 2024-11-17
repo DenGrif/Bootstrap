@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<h1>Добро пожаловать на главную страницу!</h1>
+<p>Текущее время: <span id="current-time"></span></p>
+<script>
+    function updateTime() {
+        const now = new Date();
+        const timeString = now.toLocaleString();
+        document.getElementById('current-time').textContent = timeString;
+    }
+    setInterval(updateTime, 1000); // Обновляем каждую секунду
+    updateTime(); // Инициализируем сразу
+</script>
+{% endblock %}
